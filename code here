@@ -7,11 +7,15 @@ using namespace std;
 
 int main() {
 
-
+	string fullname;
 	int userInput;
 	int factorial{1};
 	int forFactorial;
 	int powSum;
+
+	cout << "Enter your name: ";
+	cin >> fullname;
+
 	cout << "Enter a Number to see its Factorial, time table and the value of n^10 - n^5: ";
 	cin >> userInput;
 		while (cin.fail()) {
@@ -36,18 +40,16 @@ int main() {
 
 		for (int i{ 10 }; i > 0; i--) {
 
-			cout << i * userInput << endl;
+			cout << 10 << " * " << userInput << " = " <<i * userInput << endl;
 
 		}
 
 		powSum = (pow(userInput, 10)) - (pow(userInput, 5));
 
-
-if (powSum == -2147483648) {
-cout << endl << "Could not calculate the value of " << userInput << "^10 - " << userInput << "^5, Since it is out of limitations" << endl; //added for values that exceed the int capabilities 2^31
+		if (powSum == -2147483648) {
+			cout << endl << "Could not calculate the value of " << userInput << "^10 - " << userInput << "^5, Since it is out of limitations" << endl; //added for values that exceed the int capabilities 2^31
 		}
 		else {
-cout << endl << "the value of " << userInput << "^10 - " << userInput << "^5 is: " << powSum << endl;
+			cout << endl << "the value of " << userInput << "^10 - " << userInput << "^5 is: " << powSum << endl;
 		}
-
 }
